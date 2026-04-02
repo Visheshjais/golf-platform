@@ -1,0 +1,422 @@
+/* ============================================================
+   global.css — Design system for Golf Charity Platform
+   Palette: Deep Space Navy + Electric Lime + Soft Cream
+   Intentionally modern / fintech feel — NOT a golf site
+   ============================================================ */
+
+/* ── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
+
+/* ── CSS Variables ────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-base:    #050B18;   /* deepest navy */
+  --bg-card:    #0D1626;   /* card surface */
+  --bg-surface: #111E35;   /* raised surface */
+  --bg-border:  #1C2E50;   /* border colour */
+
+  /* Brand */
+  --lime:       #C4FF47;   /* primary accent */
+  --lime-dark:  #9BCC30;   /* hover state */
+  --lime-glow:  rgba(196, 255, 71, 0.15);
+
+  /* Text */
+  --text-primary:  #F0F4FF;
+  --text-secondary:#8899BB;
+  --text-muted:    #4A5878;
+
+  /* Semantic */
+  --success:  #4ADE80;
+  --warning:  #FFD166;
+  --danger:   #FF5F7E;
+  --info:     #60A5FA;
+
+  /* Charity highlight */
+  --charity:  #FF5F7E;
+
+  /* Spacing */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+
+  /* Transitions */
+  --transition: 0.2s ease;
+}
+
+/* ── Reset ────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background:  var(--bg-base);
+  color:       var(--text-primary);
+  line-height: 1.6;
+  min-height:  100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography ───────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: 'Syne', sans-serif;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
+h4 { font-size: 1.1rem; }
+
+p { color: var(--text-secondary); line-height: 1.7; }
+
+a { color: var(--lime); text-decoration: none; transition: opacity var(--transition); }
+a:hover { opacity: 0.8; }
+
+/* ── Utility classes ──────────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin:    0 auto;
+  padding:   0 1.5rem;
+}
+
+.page-loading {
+  display:     flex;
+  align-items: center;
+  justify-content: center;
+  height:      100vh;
+  color:       var(--text-secondary);
+  font-size:   1.1rem;
+}
+
+.lime-text { color: var(--lime); }
+.danger-text { color: var(--danger); }
+.success-text { color: var(--success); }
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.5rem;
+  padding:         0.75rem 1.75rem;
+  border-radius:   var(--radius-sm);
+  font-family:     'Inter', sans-serif;
+  font-size:       0.95rem;
+  font-weight:     600;
+  cursor:          pointer;
+  border:          none;
+  transition:      all var(--transition);
+  white-space:     nowrap;
+}
+
+.btn-primary {
+  background: var(--lime);
+  color:      #050B18;
+}
+.btn-primary:hover {
+  background: var(--lime-dark);
+  transform:  translateY(-1px);
+  box-shadow: 0 8px 24px var(--lime-glow);
+}
+
+.btn-outline {
+  background:  transparent;
+  color:       var(--lime);
+  border:      1.5px solid var(--lime);
+}
+.btn-outline:hover {
+  background: var(--lime-glow);
+}
+
+.btn-ghost {
+  background: var(--bg-surface);
+  color:      var(--text-primary);
+  border:     1px solid var(--bg-border);
+}
+.btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
+
+.btn-danger {
+  background: transparent;
+  color:      var(--danger);
+  border:     1px solid var(--danger);
+}
+.btn-danger:hover { background: rgba(255,95,126,0.1); }
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor:  not-allowed;
+  transform: none !important;
+}
+
+.btn-sm { padding: 0.45rem 1rem; font-size: 0.85rem; }
+.btn-lg { padding: 1rem 2.5rem;  font-size: 1.05rem; }
+
+/* ── Cards ────────────────────────────────────────────────── */
+.card {
+  background:    var(--bg-card);
+  border:        1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  padding:       1.75rem;
+  transition:    border-color var(--transition);
+}
+.card:hover { border-color: var(--bg-surface); }
+.card-hover:hover {
+  border-color: var(--lime);
+  box-shadow:   0 4px 32px var(--lime-glow);
+  transform:    translateY(-2px);
+}
+
+/* ── Forms ────────────────────────────────────────────────── */
+.form-group {
+  display:        flex;
+  flex-direction: column;
+  gap:            0.4rem;
+  margin-bottom:  1.25rem;
+}
+
+label {
+  font-size:   0.85rem;
+  font-weight: 500;
+  color:       var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+input, select, textarea {
+  background:    var(--bg-surface);
+  border:        1px solid var(--bg-border);
+  border-radius: var(--radius-sm);
+  color:         var(--text-primary);
+  font-family:   'Inter', sans-serif;
+  font-size:     0.95rem;
+  padding:       0.75rem 1rem;
+  width:         100%;
+  transition:    border-color var(--transition);
+  outline:       none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--lime);
+  box-shadow:   0 0 0 3px var(--lime-glow);
+}
+
+input::placeholder { color: var(--text-muted); }
+select option { background: var(--bg-card); }
+
+/* ── Badges / Pills ───────────────────────────────────────── */
+.badge {
+  display:       inline-block;
+  padding:       0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size:     0.75rem;
+  font-weight:   600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.badge-active   { background: rgba(74,222,128,0.15); color: var(--success); }
+.badge-inactive { background: rgba(74,88,120,0.3);   color: var(--text-muted); }
+.badge-pending  { background: rgba(255,209,102,0.15); color: var(--warning); }
+.badge-paid     { background: rgba(74,222,128,0.15);  color: var(--success); }
+.badge-rejected { background: rgba(255,95,126,0.15);  color: var(--danger); }
+.badge-lime     { background: var(--lime-glow);        color: var(--lime); }
+
+/* ── Table ────────────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; border-radius: var(--radius-md); }
+
+table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       0.9rem;
+}
+
+thead th {
+  background:    var(--bg-surface);
+  color:         var(--text-secondary);
+  font-weight:   600;
+  font-size:     0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding:       0.85rem 1rem;
+  text-align:    left;
+  border-bottom: 1px solid var(--bg-border);
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--bg-border);
+  transition:    background var(--transition);
+}
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: var(--bg-surface); }
+
+tbody td {
+  padding:    0.9rem 1rem;
+  color:      var(--text-primary);
+  font-size:  0.9rem;
+}
+
+/* ── Alert / message boxes ────────────────────────────────── */
+.alert {
+  padding:       0.9rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-size:     0.9rem;
+  margin-bottom: 1rem;
+}
+.alert-error   { background: rgba(255,95,126,0.1);  border: 1px solid rgba(255,95,126,0.3);  color: var(--danger); }
+.alert-success { background: rgba(74,222,128,0.1);  border: 1px solid rgba(74,222,128,0.3);  color: var(--success); }
+.alert-info    { background: rgba(96,165,250,0.1);  border: 1px solid rgba(96,165,250,0.3);  color: var(--info); }
+
+/* ── Section titles ───────────────────────────────────────── */
+.section-label {
+  font-size:     0.75rem;
+  font-weight:   700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color:         var(--lime);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Grid helpers ─────────────────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(32px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.8); }
+  70%  { transform: scale(1.06); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes pulse-lime {
+  0%, 100% { box-shadow: 0 0 0 0   var(--lime-glow); }
+  50%       { box-shadow: 0 0 0 12px transparent; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes drawNumberPop {
+  0%   { opacity: 0; transform: scale(0.5) rotate(-15deg); }
+  60%  { transform: scale(1.15) rotate(4deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes borderGlow {
+  0%, 100% { border-color: var(--bg-border); }
+  50%       { border-color: var(--lime); box-shadow: 0 0 16px var(--lime-glow); }
+}
+
+/* ── Animation utility classes ────────────────────────────── */
+.fade-up    { animation: fadeUp    0.55s ease both; }
+.fade-in    { animation: fadeIn    0.35s ease both; }
+.slide-up   { animation: slideUp   0.35s ease both; }
+.pop-in     { animation: popIn     0.4s  cubic-bezier(0.34,1.56,0.64,1) both; }
+.float      { animation: floatY    3s    ease-in-out infinite; }
+.spin       { animation: spin      1s    linear infinite; }
+.pulse-lime { animation: pulse-lime 2s   ease infinite; }
+
+/* Staggered fade-up for sibling elements */
+.fade-up:nth-child(1) { animation-delay: 0.05s; }
+.fade-up:nth-child(2) { animation-delay: 0.12s; }
+.fade-up:nth-child(3) { animation-delay: 0.19s; }
+.fade-up:nth-child(4) { animation-delay: 0.26s; }
+.fade-up:nth-child(5) { animation-delay: 0.33s; }
+
+/* Draw numbers pop in sequence */
+.draw-num { animation: drawNumberPop 0.45s cubic-bezier(0.34,1.56,0.64,1) both; }
+.draw-num:nth-child(1) { animation-delay: 0.05s; }
+.draw-num:nth-child(2) { animation-delay: 0.12s; }
+.draw-num:nth-child(3) { animation-delay: 0.19s; }
+.draw-num:nth-child(4) { animation-delay: 0.26s; }
+.draw-num:nth-child(5) { animation-delay: 0.33s; }
+
+/* Shimmer loading skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-surface) 25%,
+    var(--bg-border)  50%,
+    var(--bg-surface) 75%
+  );
+  background-size: 200% auto;
+  animation: shimmer 1.5s linear infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* Hover lift — apply to interactive cards */
+.lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+}
+
+/* Active press feedback on buttons */
+.btn:active:not(:disabled) { transform: scale(0.97) translateY(0) !important; }
+
+/* Glowing border animation for prize highlight cards */
+.glow-border { animation: borderGlow 2.5s ease-in-out infinite; }
+
+/* Smooth page section reveal via IntersectionObserver (applied by JS) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Spinner ──────────────────────────────────────────────── */
+.spinner {
+  width:  28px;
+  height: 28px;
+  border: 3px solid var(--bg-border);
+  border-top-color: var(--lime);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 2rem auto;
+}
+
+/* ── Divider ──────────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--bg-border);
+  margin: 1.5rem 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .container { padding: 0 1rem; }
+}

@@ -1,0 +1,123 @@
+/* src/pages/Dashboard.css */
+
+.dashboard-page {
+  padding: 3rem 0 6rem;
+  min-height: calc(100vh - 68px);
+}
+
+.dash-header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  margin-bottom:   2rem;
+  flex-wrap:       wrap;
+  gap:             1rem;
+}
+.dash-header h2 { margin: 0; }
+.dash-sub-status {
+  display:     flex;
+  align-items: center;
+  gap:         0.75rem;
+}
+
+/* Tabs */
+.dash-tabs {
+  display:       flex;
+  gap:           0.25rem;
+  border-bottom: 1px solid var(--bg-border);
+  margin-bottom: 2.5rem;
+  overflow-x:    auto;
+}
+.dash-tab {
+  background:   none;
+  border:       none;
+  color:        var(--text-muted);
+  font-size:    0.9rem;
+  font-weight:  500;
+  padding:      0.85rem 1.25rem;
+  cursor:       pointer;
+  border-bottom: 2px solid transparent;
+  transition:   all var(--transition);
+  white-space:  nowrap;
+}
+.dash-tab:hover       { color: var(--text-primary); }
+.dash-tab--active {
+  color:         var(--lime);
+  border-bottom-color: var(--lime);
+}
+
+/* Overview stat cards */
+.overview-stats { margin-bottom: 2rem; }
+.stat-card { text-align: center; padding: 1.5rem; }
+.stat-card-label {
+  font-size:     0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color:         var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.stat-card-val {
+  font-family:  'Syne', sans-serif;
+  font-size:    1.8rem;
+  font-weight:  800;
+  color:        var(--lime);
+  margin-bottom: 0.25rem;
+}
+.stat-card-sub { font-size: 0.78rem; color: var(--text-muted); }
+
+/* Scores layout */
+.scores-layout {
+  display:               grid;
+  grid-template-columns: 340px 1fr;
+  gap:                   2rem;
+  align-items:           flex-start;
+}
+.score-form-card { padding: 1.75rem; }
+.score-form-card h4 { margin-bottom: 0.25rem; }
+.score-form-card > p { font-size: 0.85rem; margin-bottom: 1.25rem; }
+.score-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 1rem; }
+
+.score-items { display: flex; flex-direction: column; gap: 0.75rem; }
+.score-item {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  padding:         1rem 1.25rem;
+}
+.score-item-left { display: flex; align-items: center; gap: 1rem; }
+.score-rank { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; min-width: 24px; }
+.score-pts  { display: block; font-weight: 700; font-size: 1.1rem; color: var(--lime); }
+.score-date { display: block; font-size: 0.8rem; color: var(--text-muted); }
+
+.score-list h4 { margin-bottom: 1.25rem; }
+.empty-state { text-align: center; padding: 2.5rem; }
+.empty-state p { margin: 0; }
+
+/* Winnings */
+.winner-items { display: flex; flex-direction: column; gap: 1rem; }
+.winner-item  { padding: 1.5rem; }
+.winner-header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  flex-wrap:       wrap;
+  gap:             0.75rem;
+  margin-bottom:   1rem;
+}
+.winner-header h4 { margin: 0 0 0.25rem; }
+.winner-header p  { margin: 0; font-size: 0.85rem; }
+
+.proof-upload { margin-top: 0.75rem; }
+.proof-label  { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+.proof-row    { display: flex; gap: 0.75rem; }
+.proof-row input { flex: 1; }
+
+/* Charity tab */
+.charity-tab-card { max-width: 520px; }
+.charity-tab-card h4 { margin-bottom: 0.5rem; }
+.charity-tab-card > p { margin-bottom: 1.5rem; }
+
+@media (max-width: 768px) {
+  .scores-layout { grid-template-columns: 1fr; }
+  .dash-tabs { padding-bottom: 0; }
+}

@@ -1,0 +1,30 @@
+/* src/pages/Auth.css — shared styles for Login + Register */
+
+.auth-page {
+  min-height:      calc(100vh - 68px);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  padding:         2rem 1rem;
+}
+
+.auth-card {
+  width:     100%;
+  max-width: 420px;
+  padding:   2.5rem;
+}
+
+.auth-header {
+  margin-bottom: 2rem;
+}
+.auth-header h2 { margin-top: 0.3rem; }
+
+.w-full { width: 100%; justify-content: center; }
+
+.auth-switch {
+  text-align:  center;
+  margin-top:  1.5rem;
+  font-size:   0.9rem;
+  color:       var(--text-muted);
+}
+.auth-switch a { color: var(--lime); }
