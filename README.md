@@ -1,8 +1,21 @@
-# Golf Charity Subscription Platform
+<div align="center">
 
-A subscription-based web application combining golf performance tracking, charity fundraising, and a monthly draw-based reward engine.
+# ⛳ Golf Charity Platform
+### A Modern Subscription-Based Golf & Charity Web App
 
-**Stack:** Vite + React 18 · Node.js + Express · MongoDB Atlas · Stripe · Vercel (both frontend + backend)
+![Golf Charity](https://img.shields.io/badge/Golf%20Charity-Subscription%20Platform-C4FF47?style=for-the-badge&logo=golf&logoColor=black)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Stripe](https://img.shields.io/badge/Payments-Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white)
+![Vercel](https://img.shields.io/badge/Hosted-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
+**Golf performance tracking · Monthly prize draws · Charity fundraising**
+
+[🌐 Live Demo](https://golfplatform-frontend.vercel.app)
+
+</div>
 
 ---
 
@@ -140,9 +153,10 @@ Create `server/vercel.json`:
 ### Step 3 — Deploy frontend to Vercel
 
 1. Vercel → New Project → same repo → Root Directory: `client`
-2. Add environment variable:
+2. Framework Preset: `Vite`
+3. Add environment variable:
    - `VITE_API_URL` = `https://golf-server.vercel.app/api`
-3. Deploy → note your frontend URL e.g. `https://golf-client.vercel.app`
+4. Deploy → note your frontend URL e.g. `https://golf-client.vercel.app`
 
 ### Step 4 — Update CLIENT_URL on backend
 
@@ -275,7 +289,29 @@ golf-platform/
 ## Submission Credentials Format
 
 ```
-Live URL:     https://your-frontend.vercel.app
+Live URL:     https://golfplatform-frontend.vercel.app
 Admin:        email / password
 Test user:    email / password
 ```
+
+---
+
+## 📜 License
+MIT License © 2025 Vishesh Jaiswal
+
+---
+
+## 👨‍💻 Author
+
+**Vishesh Jaiswal**
+- GitHub: [@Visheshjais](https://github.com/Visheshjais)
+
+---
+
+<div align="center">
+
+Made with ❤️ and lots of music by **Vishesh Jaiswal**
+
+⭐ Star this repo if you liked it!
+
+</div>
